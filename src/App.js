@@ -33,9 +33,7 @@ class App extends Component {
             )
           }
         />
-        <Route path = "/create" component = {()=> (
-          <CreateContact/>
-        )} />
+        <Route path = "/create" component = {CreateContact} />
       </div>
     )
   }
