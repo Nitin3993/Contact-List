@@ -25,9 +25,11 @@ class App extends Component {
   }
   createContact(contact) {
     ContactsAPI.create(contact).then(contact => {
-      this.setState(state => ({
-        contact: state.contacts.concat([contact])
-      }))
+      console.log(contact, "contact")
+      this.setState({
+        contacts: this.state.contacts.concat([contact])
+        
+      })
     })
   }
   render() {
@@ -44,6 +46,7 @@ class App extends Component {
           <CreateContact 
             onCreateContact= {(contact)=>{
               this.createContact(contact)
+              console.log(this.state.contacts)
               history.push('/')
             }}
           />
